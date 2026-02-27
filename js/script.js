@@ -174,4 +174,20 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
+    // ---- Disclosure Page: Search Filter ----
+    const disclosureSearch = document.getElementById('disclosureSearch');
+    const disclosureList = document.getElementById('disclosureList');
+
+    if (disclosureSearch && disclosureList) {
+        disclosureSearch.addEventListener('input', function () {
+            const query = this.value.toLowerCase().trim();
+            const cards = disclosureList.querySelectorAll('.disclosure-card');
+
+            cards.forEach(function (card) {
+                const name = card.querySelector('.dc-info h4').textContent.toLowerCase();
+                card.style.display = name.includes(query) ? '' : 'none';
+            });
+        });
+    }
 });

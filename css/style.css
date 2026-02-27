@@ -1407,3 +1407,236 @@ ul {
         grid-template-columns: 1fr 1fr;
     }
 }
+
+
+/* ============================================
+   NAV DOT (Hidden Disclosure Link)
+   ============================================ */
+.nav-dot {
+    font-size: 10px !important;
+    line-height: 1;
+    opacity: 0.5;
+    transition: opacity 0.3s ease, color 0.3s ease, transform 0.3s ease !important;
+    vertical-align: middle;
+    margin-left: 15px !important;
+}
+
+.nav-dot:hover,
+.nav-dot.active {
+    opacity: 1;
+    color: #2b1a12 !important;
+    transform: scale(1.4);
+}
+
+.nav-dot::after {
+    display: none !important;
+}
+
+
+/* ============================================
+   DISCLOSURE PAGE
+   ============================================ */
+.disclosure-section {
+    padding: 80px 0 100px;
+    background-color: #f4f1ee;
+}
+
+.disclosure-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.doc-count {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #2b1a12;
+}
+
+.doc-count strong {
+    font-weight: 600;
+}
+
+.disclosure-search {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.search-input {
+    font-family: 'Inter', sans-serif;
+    padding: 10px 18px;
+    border: 1px solid #d8c5b8;
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    font-size: 14px;
+    color: #111;
+    background-color: #fff;
+    outline: none;
+    min-width: 250px;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #c7a489;
+}
+
+.search-btn {
+    padding: 10px 16px;
+    background-color: #7a4b2f;
+    color: #fff;
+    border: 1px solid #7a4b2f;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #2b1a12;
+}
+
+/* Table Header */
+.disclosure-table-header {
+    display: grid;
+    grid-template-columns: 1fr 180px 200px;
+    padding: 15px 30px;
+    background-color: #2b1a12;
+    border-radius: 10px 10px 0 0;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.dt-action {
+    text-align: right;
+}
+
+.dt-date {
+    text-align: center;
+}
+
+/* Document Cards */
+.disclosure-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.disclosure-card {
+    display: grid;
+    grid-template-columns: 50px 1fr 180px 200px;
+    align-items: center;
+    padding: 22px 30px;
+    background-color: #fff;
+    border: 1px solid #e8ddd4;
+    border-top: none;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.disclosure-card:last-child {
+    border-radius: 0 0 10px 10px;
+}
+
+.disclosure-card:hover {
+    background-color: #faf7f4;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.dc-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dc-info h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #2b1a12;
+}
+
+.dc-date {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #6b6b6b;
+    text-align: center;
+}
+
+.dc-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.action-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid #d8c5b8;
+    background-color: #f4f1ee;
+    color: #7a4b2f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-btn:hover {
+    background-color: #7a4b2f;
+    color: #fff;
+    border-color: #7a4b2f;
+}
+
+.action-btn:hover svg {
+    stroke: #fff;
+}
+
+.file-size {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: #999;
+    min-width: 55px;
+    text-align: right;
+}
+
+/* Disclosure Responsive */
+@media (max-width: 768px) {
+    .disclosure-table-header {
+        display: none;
+    }
+
+    .disclosure-card {
+        grid-template-columns: 40px 1fr;
+        grid-template-rows: auto auto;
+        gap: 8px 15px;
+        padding: 18px 20px;
+    }
+
+    .dc-icon {
+        grid-row: 1 / 3;
+    }
+
+    .dc-date {
+        grid-column: 2;
+        text-align: left;
+        font-size: 12px;
+    }
+
+    .dc-actions {
+        grid-column: 1 / -1;
+        justify-content: flex-start;
+        margin-top: 8px;
+    }
+
+    .search-input {
+        min-width: 150px;
+    }
+}
